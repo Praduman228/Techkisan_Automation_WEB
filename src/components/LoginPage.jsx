@@ -14,7 +14,7 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://techkisan-automation-webservices.onrender.com/employees/login', {
+      const response = await fetch('http://localhost:8000/employees/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -26,8 +26,10 @@ const LoginPage = () => {
       const data = await response.json();
 
       if (data.success) {
-        console.log(data.message);
+        if(data.message=="employee") {
         navigate('/employee-dashboard');
+        } else if(data.message=="manager") {
+        navigate('/manager-dashboard');}
       } else {
         
         setError(data.message);

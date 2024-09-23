@@ -1,10 +1,10 @@
 import React from 'react';
-import '../styles/EmployeeDashboard.css';
+import '../styles/ManagerNavigation.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
 import { useState } from 'react';
 
-function NavigationBar({ activeSection, onNavigate }) {
+function ManagerNavigation({ activeSection, onNavigate }) {
   const navigate = useNavigate();
 
   
@@ -79,7 +79,7 @@ function NavigationBar({ activeSection, onNavigate }) {
   };
 
   return (
-    <nav className="navbar">
+    <nav className="navigationbar">
       <div className="logo">Logo</div>
       <div className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div className="bar"></div>
@@ -99,7 +99,7 @@ function NavigationBar({ activeSection, onNavigate }) {
         <li className={`dropdown ${openDropdown === 'leaves' ? 'open' : ''}`}>
           <a
             href="#"
-            className={activeSection === 'request' || activeSection === 'report' ? 'active' : ''}
+            className={activeSection === 'request' || activeSection === 'report' || activeSection === 'pending' ? 'active' : ''}
             onClick={() => toggleDropdown('leaves')}
           >
             Leaves
@@ -107,6 +107,7 @@ function NavigationBar({ activeSection, onNavigate }) {
           <div className="dropdown-content">
             <a href="#" onClick={() => handleLinkClick('request')}>Request</a>
             <a href="#" onClick={() => handleLinkClick('report')}>My Report</a>
+            <a href="#" onClick={() => handleLinkClick('pending')}>Pending Leave</a>
           </div>
         </li>
         <li>
@@ -131,4 +132,4 @@ function NavigationBar({ activeSection, onNavigate }) {
   );
 }
 
-export default NavigationBar;
+export default ManagerNavigation;

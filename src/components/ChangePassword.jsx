@@ -35,7 +35,7 @@ const ChangePassword = () => {
 
     try {
       const response = await axios.post(
-        'https://techkisan-automation-webservices.onrender.com/employees/changepassword',
+        'http://localhost:8000/employees/changepassword',
         { currentPassword, newPassword }, 
         {
           headers: {
