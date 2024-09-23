@@ -52,7 +52,7 @@ const AdminDashboard = () => {
         }
 
         const response = await axios.get(
-          "http://localhost:8000/admin/admindata",
+          "https://techkisan-automation-webservices.onrender.com/admin/admindata",
           {
             headers: {
               Authorization: `Bearer ${token}`,
