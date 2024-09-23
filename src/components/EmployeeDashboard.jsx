@@ -80,7 +80,7 @@ let todayDate = day + '/' + month + '/' + year;
 
     try {
       const token = getCookie('token');
-      await axios.post('http://localhost:8000/employees/punchIn', {
+      await axios.post('https://techkisan-automation-webservices.onrender.com/employees/punchIn', {
         punchInTime: currentTime,
       }, {
         headers: {
@@ -103,7 +103,7 @@ let todayDate = day + '/' + month + '/' + year;
     // Send punch-out time to backend
     try {
       const token = getCookie('token');
-      await axios.post('http://localhost:8000/employees/punchOut', {
+      await axios.post('https://techkisan-automation-webservices.onrender.com/employees/punchOut', {
         punchOutTime: currentTime,
       }, {
         headers: {
@@ -121,7 +121,7 @@ let todayDate = day + '/' + month + '/' + year;
 
   const fetchLeaves = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/employees/getLeaves', {
+      const response = await axios.get('https://techkisan-automation-webservices.onrender.com/employees/getLeaves', {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
@@ -175,7 +175,7 @@ let todayDate = day + '/' + month + '/' + year;
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await fetch('http://localhost:8000/employees/addLeave', {
+        const response = await fetch('https://techkisan-automation-webservices.onrender.com/employees/addLeave', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -298,7 +298,7 @@ const filteredLeave=leaves.filter((leave) =>{
           return;
         }
 
-        const response = await axios.get('http://localhost:8000/employees/empdata', {
+        const response = await axios.get('https://techkisan-automation-webservices.onrender.com/employees/empdata', {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'multipart/form-data',

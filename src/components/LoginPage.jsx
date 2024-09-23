@@ -14,7 +14,7 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8000/employees/login', {
+      const response = await fetch('https://techkisan-automation-webservices.onrender.com/employees/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
