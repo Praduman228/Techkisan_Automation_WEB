@@ -15,10 +15,10 @@ const AdminLoginPage = () => {
     try {
       const response = await fetch('https://techkisan-automation-webservices.onrender.com/admin/login', {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },
-        credentials: 'include',
         body: JSON.stringify({ email, password }),
       });
 

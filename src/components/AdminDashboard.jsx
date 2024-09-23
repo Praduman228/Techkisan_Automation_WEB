@@ -54,11 +54,11 @@ const AdminDashboard = () => {
         const response = await axios.get(
           "https://techkisan-automation-webservices.onrender.com/admin/admindata",
           {
+            withCredentials: true,
             headers: {
               Authorization: `Bearer ${token}`,
               "Content-Type": "multipart/form-data",
             },
-            withCredentials: true,
           }
         );
 
